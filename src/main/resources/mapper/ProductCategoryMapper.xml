@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.guazi.web.mapper.ProductCategoryMapper">
+
+	<resultMap type="com.guazi.web.entity.ProductCategory" id="productCategoryResultMap" >
+	    <result column="category_id" jdbcType="INTEGER" property="categoryId" />
+		<result column="category_name" jdbcType="VARCHAR" property="categoryName" />
+		<result column="category_type" jdbcType="INTEGER" property="categoryType" /> 
+	</resultMap>
+
+	 <select id="selectCategoryType" resultMap="productCategoryResultMap"
+		parameterType="java.lang.Integer">
+		select category_id,category_name,category_type from product_category where
+		category_type=#{categoryType}
+	</select> 
+
+  
+
+</mapper>
+

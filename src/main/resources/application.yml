@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/sell?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root123
+    jpa:
+    show-sql: true
+
+  jackson:
+    default-property-inclusion: non-null
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    
+server:
+  context-path: /sell
+wechat:
+  mpAppid: wxd55cbe0463386cc7
+  mpAppSecret: 5ebdf752c78ac294139b97cada7a4d93
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  keyPath: /doc/h5.p12
+  notifyUrl: http://zgpayment.natapp1.cc/sell/pay/notify
+  templateId: 
+    orderPushStatus: 123456789
+  
+  
+  
+projectUrl:
+  wechatMpAuthorize: http://localhost:8080
+  wechatOpenAuthorize: http://localhost:8080
+  sell: http://localhost:8080
+  
+ 
+#sql控制台打印
+logging:
+  level:
+      com.guazi.web.mapper: trace
+      
+#xml所在位置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.guazi.web.entity
+  
